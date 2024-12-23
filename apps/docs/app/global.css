@@ -58,3 +58,51 @@ a[data-radix-collection-item]:hover {
   color: #f472b6;
   background-color: #fdf2f8;
 }
+
+body
+  #nd-nav
+  > nav
+  > div.flex.flex-1.flex-row.items-center.justify-end.lg\:gap-1\.5
+  > button.inline-flex.items-center.gap-2.rounded-full.border.bg-fd-secondary\/50.p-1\.5.text-sm.text-fd-muted-foreground.transition-colors.hover\:bg-fd-accent.hover\:text-fd-accent-foreground.w-full.max-w-\[240px\].max-lg\:hidden {
+  background-color: #fdf2f8;
+}
+
+body
+  #nd-nav
+  > nav
+  > div.flex.flex-1.flex-row.items-center.justify-end.lg\:gap-1\.5
+  > button.inline-flex.items-center.gap-2.rounded-full.border.bg-fd-secondary\/50.p-1\.5.text-sm.text-fd-muted-foreground.transition-colors.hover\:bg-fd-accent.hover\:text-fd-accent-foreground.w-full.max-w-\[240px\].max-lg\:hidden:hover {
+  background-color: #fce7f3;
+}
+
+#radix-\:r0\: {
+  border: 1px solid #f9a8d4;
+}
+
+#radix-\:r0\: > div.flex.flex-row.items-center.gap-2.px-3 {
+  color: #f9a8d4;
+}
+
+#radix-\:r0\:
+  > div.flex.flex-row.items-center.gap-2.px-3
+  > div
+  > svg.lucide.lucide-search.absolute.size-full.text-fd-muted-foreground.transition-opacity {
+  color: #f9a8d4 !important;
+}
+
+#radix-\:r0\: > div.flex.flex-row.items-center.gap-2.px-3 > button {
+  color: #f9a8d4;
+  border: 1px solid #f9a8d4;
+}
+
+#radix-\:r0\: > div.flex.flex-row.items-center.gap-2.px-3 > input {
+  color: #475569;
+}
+
+#radix-\:r0\: > div.flex.flex-row.items-center.gap-2.px-3 > input::placeholder {
+  color: #94a3b8;
+}
+
+#radix-\:r0\: > div.flex.flex-row.items-center.gap-2.px-3 > button:hover {
+  background-color: #fce7f3;
+}
