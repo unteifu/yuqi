@@ -1,3 +1,6 @@
 {
-  "name": "@yuqi/github"
+  "name": "@yuqi/github",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
 }

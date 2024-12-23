@@ -17,6 +17,7 @@
   },
   "devDependencies": {
     "@yuqi/tsconfig": "workspace:*",
+    "jest": "^29.7.0",
     "typescript": "catalog:"
   },
   "prettier": "@yuqi/prettier-config"
