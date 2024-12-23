@@ -2,50 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: 214 32% 91% !important;
-  --primary: 329 86% 70%;
-}
-
-.bg-fd-background {
-  background-color: #fdf2f8 !important;
-}
-
-#nd-sidebar {
-  background-color: hsl(329, 86%, 70%, 0.2);
-  color: #fff;
-}
-
-#nd-home-layout {
-  background-color: #fff;
-}
-
 #nd-nav {
   border-color: #f9a8d4;
 }
 
-#radix-\:r0\:\ {
-  color: #f9a8d4 !important;
-}
-
-button[data-search-full] kbd {
-  background-color: #f9a8d4;
+#nd-nav
+  > nav
+  > div.flex.flex-1.flex-row.items-center.justify-end.lg\:gap-1\.5
+  > button.inline-flex.items-center.gap-2.rounded-full.border.bg-fd-secondary\/50.p-1\.5.text-sm.text-fd-muted-foreground.transition-colors.hover\:bg-fd-accent.hover\:text-fd-accent-foreground.w-full.max-w-\[240px\].max-lg\:hidden
+  > div {
   color: #fff;
-  font-weight: 600;
-  border: transparent;
 }
 
-button[data-search-full] .bg-fd-background {
-  background-color: #f9a8d4 !important;
-}
-
-a[data-radix-collection-item] {
-  color: #f472b6;
-}
-
-a[data-radix-collection-item]:hover {
-  color: #f472b6;
-  background-color: #fdf2f8;
+#nd-nav
+  > nav
+  > div.flex.flex-1.flex-row.items-center.justify-end.lg\:gap-1\.5
+  > button.inline-flex.items-center.gap-2.rounded-full.border.bg-fd-secondary\/50.p-1\.5.text-sm.text-fd-muted-foreground.transition-colors.hover\:bg-fd-accent.hover\:text-fd-accent-foreground.w-full.max-w-\[240px\].max-lg\:hidden
+  > div
+  > kbd {
+  background-color: #f9a8d4;
+  border: 1px solid #f9a8d4;
 }
 
 body
@@ -53,8 +29,18 @@ body
   > nav
   > div.flex.flex-1.flex-row.items-center.justify-end.lg\:gap-1\.5
   > button.inline-flex.items-center.gap-2.rounded-full.border.bg-fd-secondary\/50.p-1\.5.text-sm.text-fd-muted-foreground.transition-colors.hover\:bg-fd-accent.hover\:text-fd-accent-foreground.w-full.max-w-\[240px\].max-lg\:hidden {
-  background-color: #fdf2f8;
-  border: 1px solid #f9a8d4;
+  background-color: #fce7f3;
+  border: 1px solid #fce7f3;
+  color: #f472b6;
+}
+
+body
+  #nd-nav
+  > nav
+  > div.flex.flex-1.flex-row.items-center.justify-end.lg\:gap-1\.5
+  > button.inline-flex.items-center.gap-2.rounded-full.border.bg-fd-secondary\/50.p-1\.5.text-sm.text-fd-muted-foreground.transition-colors.hover\:bg-fd-accent.hover\:text-fd-accent-foreground.w-full.max-w-\[240px\].max-lg\:hidden:hover {
+  background-color: #fbcfe8 !important;
+  border: 1px solid #fbcfe8;
   color: #f472b6;
 }
 
@@ -72,6 +58,22 @@ body
   > button.inline-flex.items-center.gap-2.rounded-full.border.bg-fd-secondary\/50.p-1\.5.text-sm.text-fd-muted-foreground.transition-colors.hover\:bg-fd-accent.hover\:text-fd-accent-foreground.w-full.max-w-\[240px\].max-lg\:hidden
   > svg {
   color: #f472b6;
+}
+
+#nd-nav
+  > nav
+  > div.flex.flex-1.flex-row.items-center.justify-end.lg\:gap-1\.5
+  > li:nth-child(3)
+  > a {
+  color: #f472b6;
+}
+
+#nd-nav
+  > nav
+  > div.flex.flex-1.flex-row.items-center.justify-end.lg\:gap-1\.5
+  > li:nth-child(3)
+  > a:hover {
+  background-color: #fce7f3;
 }
 
 #radix-\:r0\: {
