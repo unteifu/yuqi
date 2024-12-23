@@ -28,7 +28,7 @@
     "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
     "@turbo/gen": "^2.3.1",
-    "@yuqi/prettier-config": "workspace:*",
+    "@yuqijs/prettier-config": "workspace:*",
     "commitizen": "^4.3.1",
     "cz-conventional-changelog": "^3.3.0",
     "husky": "^9.1.7",
@@ -36,7 +36,7 @@
     "turbo": "^2.3.1",
     "typescript": "catalog:"
   },
-  "prettier": "@yuqi/prettier-config",
+  "prettier": "@yuqijs/prettier-config",
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"

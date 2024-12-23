@@ -1,5 +1,5 @@
 {
-  "name": "@yuqi/prettier-config",
+  "name": "@yuqijs/prettier-config",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -16,9 +16,9 @@
     "prettier": "catalog:"
   },
   "devDependencies": {
-    "@yuqi/tsconfig": "workspace:*",
+    "@yuqijs/tsconfig": "workspace:*",
     "jest": "^29.7.0",
     "typescript": "catalog:"
   },
-  "prettier": "@yuqi/prettier-config"
+  "prettier": "@yuqijs/prettier-config"
 }

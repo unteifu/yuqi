@@ -1,4 +1,4 @@
-import baseConfig from "@yuqi/eslint-config/base";
+import baseConfig from "@yuqijs/eslint-config/base";
 
 /** @type {import('typescript-eslint').Config} */
 export default [

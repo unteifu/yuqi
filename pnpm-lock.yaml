@@ -32,7 +32,7 @@ importers:
       '@turbo/gen':
         specifier: ^2.3.1
         version: 2.3.1(@types/node@22.7.5)(typescript@5.6.3)
-      '@yuqi/prettier-config':
+      '@yuqijs/prettier-config':
         specifier: workspace:*
         version: link:tooling/prettier
       commitizen:
@@ -56,13 +56,13 @@ importers:
 
   packages/contract:
     devDependencies:
-      '@yuqi/eslint-config':
+      '@yuqijs/eslint-config':
         specifier: workspace:*
         version: link:../../tooling/eslint
-      '@yuqi/prettier-config':
+      '@yuqijs/prettier-config':
         specifier: workspace:*
         version: link:../../tooling/prettier
-      '@yuqi/tsconfig':
+      '@yuqijs/tsconfig':
         specifier: workspace:*
         version: link:../../tooling/typescript
       eslint:
@@ -108,10 +108,10 @@ importers:
       '@types/eslint__js':
         specifier: 8.42.3
         version: 8.42.3
-      '@yuqi/prettier-config':
+      '@yuqijs/prettier-config':
         specifier: workspace:*
         version: link:../prettier
-      '@yuqi/tsconfig':
+      '@yuqijs/tsconfig':
         specifier: workspace:*
         version: link:../typescript
       eslint:
@@ -142,7 +142,7 @@ importers:
         specifier: 'catalog:'
         version: 3.3.3
     devDependencies:
-      '@yuqi/tsconfig':
+      '@yuqijs/tsconfig':
         specifier: workspace:*
         version: link:../typescript
       jest:

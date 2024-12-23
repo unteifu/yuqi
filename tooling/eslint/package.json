@@ -1,5 +1,5 @@
 {
-  "name": "@yuqi/eslint-config",
+  "name": "@yuqijs/eslint-config",
   "private": true,
   "version": "0.3.0",
   "type": "module",
@@ -25,12 +25,12 @@
   },
   "devDependencies": {
     "@types/eslint__js": "8.42.3",
-    "@yuqi/prettier-config": "workspace:*",
-    "@yuqi/tsconfig": "workspace:*",
+    "@yuqijs/prettier-config": "workspace:*",
+    "@yuqijs/tsconfig": "workspace:*",
     "eslint": "catalog:",
     "jest": "^29.7.0",
     "prettier": "catalog:",
     "typescript": "catalog:"
   },
-  "prettier": "@yuqi/prettier-config"
+  "prettier": "@yuqijs/prettier-config"
 }
