@@ -7,6 +7,10 @@
   --primary: 329 86% 70%;
 }
 
+.bg-fd-background {
+  background-color: #fdf2f8 !important;
+}
+
 #nd-sidebar {
   background-color: hsl(329, 86%, 70%, 0.2);
   color: #fff;
@@ -17,5 +21,40 @@
 }
 
 #nd-nav {
-  border-color: #f472b6;
+  border-color: #f9a8d4;
+}
+
+#radix-\:r0\:\ {
+  color: #f9a8d4 !important;
+}
+
+button[data-search-full] {
+  background-color: #fdf2f8;
+  color: #f9a8d4;
+  border: transparent;
+}
+
+button[data-search-full]:hover {
+  background-color: #fce7f3;
+  color: #f472b6;
+}
+
+button[data-search-full] kbd {
+  background-color: #f9a8d4;
+  color: #fff;
+  font-weight: 600;
+  border: transparent;
+}
+
+button[data-search-full] .bg-fd-background {
+  background-color: #f9a8d4 !important;
+}
+
+a[data-radix-collection-item] {
+  color: #f472b6;
+}
+
+a[data-radix-collection-item]:hover {
+  color: #f472b6;
+  background-color: #fdf2f8;
 }
