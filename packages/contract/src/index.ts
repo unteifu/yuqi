@@ -1,1 +1,2 @@
-export const name = "contract";
+export { createContract } from "./contracts";
+export type { InferRequestSchema, InferResponseSchema } from "./utils/infer";
