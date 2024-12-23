@@ -24,9 +24,9 @@
     "typescript-eslint": "^8.15.0"
   },
   "devDependencies": {
+    "@types/eslint__js": "8.42.3",
     "@yuqi/prettier-config": "workspace:*",
     "@yuqi/tsconfig": "workspace:*",
-    "@types/eslint__js": "8.42.3",
     "eslint": "catalog:",
     "prettier": "catalog:",
     "typescript": "catalog:"
