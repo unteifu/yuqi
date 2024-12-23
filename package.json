@@ -19,8 +19,7 @@
     "postinstall": "pnpm lint:ws",
     "typecheck": "turbo run typecheck",
     "test": "turbo run test",
-    "version": "changesets version",
-    "publish": "changeset publish",
+    "publish-packages": "turbo run build lint test && changeset version && changeset publish",
     "prepare": "husky install",
     "commit": "cz"
   },
