@@ -28,7 +28,6 @@
     "@yuqijs/prettier-config": "workspace:*",
     "@yuqijs/tsconfig": "workspace:*",
     "eslint": "catalog:",
-    "jest": "^29.7.0",
     "prettier": "catalog:",
     "typescript": "catalog:"
   },
