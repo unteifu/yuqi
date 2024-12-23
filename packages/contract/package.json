@@ -1,0 +1,34 @@
+{
+  "name": "@yuqi/contract",
+  "version": "0.1.0",
+  "type": "module",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unteifu/yuqi.git",
+    "directory": "packages/contract"
+  },
+  "scripts": {
+    "build": "tsc",
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "dev": "tsc",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint",
+    "typecheck": "tsc --noEmit --emitDeclarationOnly false"
+  },
+  "devDependencies": {
+    "@yuqi/eslint-config": "workspace:*",
+    "@yuqi/prettier-config": "workspace:*",
+    "@yuqi/tsconfig": "workspace:*",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "typescript": "catalog:"
+  },
+  "prettier": "@yuqi/prettier-config",
+  "publishConfig": {
+    "access": "public"
+  }
+}
