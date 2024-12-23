@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 214 32% 91% !important;
+  --primary: 329 86% 70%;
+}
+
+#nd-sidebar {
+  background-color: hsl(329, 86%, 70%, 0.2);
+  color: #fff;
+}
+
+#nd-home-layout {
+  background-color: #fff;
+}
+
+#nd-nav {
+  border-color: #f472b6;
+}
