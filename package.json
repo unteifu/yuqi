@@ -20,6 +20,7 @@
     "typecheck": "turbo run typecheck",
     "test": "turbo run test",
     "publish-packages": "turbo run build lint test && changeset version && changeset publish",
+    "version-packages": "turbo run build lint test && changeset version",
     "prepare": "husky install",
     "commit": "cz"
   },
