@@ -1,5 +1,5 @@
 {
-  "name": "@yuqi/contract",
+  "name": "@yuqijs/contract",
   "version": "0.1.0",
   "type": "module",
   "exports": {
@@ -21,15 +21,15 @@
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "devDependencies": {
-    "@yuqi/eslint-config": "workspace:*",
-    "@yuqi/prettier-config": "workspace:*",
-    "@yuqi/tsconfig": "workspace:*",
+    "@yuqijs/eslint-config": "workspace:*",
+    "@yuqijs/prettier-config": "workspace:*",
+    "@yuqijs/tsconfig": "workspace:*",
     "eslint": "catalog:",
     "jest": "^29.7.0",
     "prettier": "catalog:",
     "typescript": "catalog:"
   },
-  "prettier": "@yuqi/prettier-config",
+  "prettier": "@yuqijs/prettier-config",
   "publishConfig": {
     "access": "public"
   }
