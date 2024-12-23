@@ -4,8 +4,6 @@
 
 <p align="center">Build e2e typesafe REST API's magically 🪄</p>
 
-
-
 ## @yuqijs/contract
 
 <h3 align="center">Read the <a href="https://yuqijs.com">documentation</a> to get started 🚀</h3>
@@ -13,12 +11,12 @@
 `@yuqijs/contract` is a package that helps you define your REST API through a contract to be consumed by your API client and server. It provides a simple and intuitive way to define your API contract using TypeScript and Zod.
 
 ## Features
+
 - Simple contract definition using Zod ✍️
 - Nested contracts for better organization 📂
 - Infer request and response types from contracts 🧙‍♂️
 - Structured response definitions for each HTTP status codes 🚦
 - Supports all HTTP methods 🚀
-
 
 ## Installation
 
@@ -32,10 +30,11 @@ bun add @yuqijs/contract zod
 ## Usage
 
 #### Create a contract
+
 ```typescript
-import type { InferRequest, InferResponse } from '@yuqijs/contract'
-import { createContract } from '@yuqijs/contract'
-import { z } from 'zod'
+import type { InferRequest, InferResponse } from "@yuqijs/contract";
+import { createContract } from "@yuqijs/contract";
+import { z } from "zod";
 
 // Define a contract
 const userContract = createContract({
@@ -43,43 +42,43 @@ const userContract = createContract({
     path: "/users/:id",
     method: "GET",
     request: {
-      params: z.object({ 
-        id: z.string() 
-      })
+      params: z.object({
+        id: z.string(),
+      }),
     },
     responses: {
-      200: z.object({ 
+      200: z.object({
         id: z.string(),
         name: z.string(),
-        email: z.string() 
+        email: z.string(),
       }),
-      404: z.object({ 
-        error: z.string() 
-      })
-    }
+      404: z.object({
+        error: z.string(),
+      }),
+    },
   },
   updateUser: {
     path: "/users/:id",
     method: "PUT",
     request: {
       params: z.object({
-        id: z.string() 
+        id: z.string(),
       }),
-      body: z.object({ 
+      body: z.object({
         name: z.string().optional(),
-        email: z.string().optional()
-      })
+        email: z.string().optional(),
+      }),
     },
     responses: {
       200: z.object({
-        success: z.boolean() 
+        success: z.boolean(),
       }),
       404: z.object({
-        error: z.string()
-      })
-    }
-  }
-})
+        error: z.string(),
+      }),
+    },
+  },
+});
 
 // Create contract collection with nested contracts
 const contract = createContract({
@@ -90,22 +89,26 @@ const contract = createContract({
       method: "GET",
       responses: {
         200: z.object({
-          status: z.string() 
-        })
-      }
-    }
-  }
-})
+          status: z.string(),
+        }),
+      },
+    },
+  },
+});
 ```
 
 #### Infer contract request and response types
+
 ```typescript
-import type { InferRequest, InferResponse } from '@yuqijs/contract'
+import type { InferRequest, InferResponse } from "@yuqijs/contract";
 
 // Infer types from nested contracts
-type GetUserRequest = InferRequest<typeof contract['users']['getUser']>
+type GetUserRequest = InferRequest<(typeof contract)["users"]["getUser"]>;
 // { params: { id: string } }
 
-type GetUserResponse = InferResponse<typeof contract['users']['getUser'], 200>
+type GetUserResponse = InferResponse<
+  (typeof contract)["users"]["getUser"],
+  200
+>;
 // { id: string, name: string, email: string }
 ```
