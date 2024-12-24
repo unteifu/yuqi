@@ -1,5 +1,11 @@
 # @yuqijs/contract
 
+## 0.2.2
+
+### Patch Changes
+
+- [#13](https://github.com/unteifu/yuqi/pull/13) [`c584c05`](https://github.com/unteifu/yuqi/commit/c584c055d8c3f35bddd1b84019817cae5ee80dcc) Thanks [@unteifu](https://github.com/unteifu)! - Fixed bundle
+
 ## 0.2.0
 
 ### Minor Changes
