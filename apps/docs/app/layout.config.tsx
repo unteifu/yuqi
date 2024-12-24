@@ -7,7 +7,6 @@ export const baseOptions: BaseLayoutProps = {
   githubUrl: "https://github.com/unteifu/yuqi",
   disableThemeSwitch: true,
   nav: {
-    transparentMode: "always",
     title: <NavbarTitle />,
   },
 };

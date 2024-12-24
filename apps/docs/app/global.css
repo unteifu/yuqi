@@ -2,8 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary: 329 86% 70%;
+  --background: #fff;
+  --accent: 326 78% 95%;
+  --foreground: 215 16% 47%;
+  --accent-foreground: 215 25% 27%;
+  --muted-foreground: 215 16% 47%;
+}
+
+html,
+body,
+.peer {
+  color: #334155 !important;
+}
+
+.prose :where(code):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  color: #f472b6;
+  background-color: #fce7f3;
+  border: 1px solid #fce7f3;
+}
+
 #nd-nav {
   border-color: #f9a8d4;
+}
+
+#nd-sidebar {
+  background-color: #fff;
 }
 
 #nd-nav
@@ -12,6 +37,15 @@
   > button.inline-flex.items-center.gap-2.rounded-full.border.bg-fd-secondary\/50.p-1\.5.text-sm.text-fd-muted-foreground.transition-colors.hover\:bg-fd-accent.hover\:text-fd-accent-foreground.w-full.max-w-\[240px\].max-lg\:hidden
   > div {
   color: #fff;
+}
+
+figure.shiki button {
+  color: #f472b6;
+}
+
+figure.shiki button:hover {
+  background-color: #fce7f3;
+  color: #f472b6;
 }
 
 #nd-nav
@@ -106,4 +140,149 @@ body
 
 #radix-\:r0\: > div.flex.flex-row.items-center.gap-2.px-3 > button:hover {
   background-color: #fce7f3;
+}
+
+[role="tablist"],
+[role="tabpanel"],
+.bg-fd-card,
+.fd-codeblock,
+.bg-fd-muted {
+  background-color: #fff;
+}
+
+.text-fd-card-foreground {
+  box-shadow: none;
+}
+
+#nd-docs-layout > button:hover,
+#nd-sidebar
+  > div
+  > div.flex.flex-col.border-t.px-4.py-3.empty\:hidden
+  > div
+  > button:hover,
+#nd-sidebar
+  > div
+  > div.flex.flex-col.gap-2.px-4.empty\:hidden
+  > div
+  > button:hover {
+  background: #fce7f3 !important;
+  color: #f472b6;
+}
+
+#nd-sidebar > div > div.flex.flex-col.gap-2.px-4.empty\:hidden > div > button {
+  color: #f472b6;
+}
+
+#nd-sidebar
+  > div
+  > div.overflow-hidden.h-full
+  > div
+  > div
+  > div.py-4
+  > a.flex.flex-row.items-center.gap-2.rounded-md.p-2.text-fd-muted-foreground.\[overflow-wrap\:anywhere\].md\:py-1\.5.\[\&_svg\]\:size-4.transition-colors.duration-100.hover\:bg-fd-accent\/50.hover\:text-fd-accent-foreground\/80.hover\:transition-none {
+  font-weight: 500;
+}
+
+#nd-sidebar
+  > div
+  > div.overflow-hidden.h-full
+  > div
+  > div
+  > div.py-4
+  > a.flex.flex-row.items-center.gap-2.rounded-md.p-2.\[overflow-wrap\:anywhere\].md\:py-1\.5.\[\&_svg\]\:size-4.bg-fd-primary\/10.font-medium.text-fd-primary {
+  background-color: #fce7f3;
+  color: #f472b6;
+}
+
+#nd-sidebar
+  > div
+  > div.overflow-hidden.h-full
+  > div
+  > div
+  > div.py-4
+  > a.flex.flex-row.items-center.gap-2.rounded-md.p-2.text-fd-muted-foreground.\[overflow-wrap\:anywhere\].md\:py-1\.5.\[\&_svg\]\:size-4.transition-colors.duration-100.hover\:bg-fd-accent\/50.hover\:text-fd-accent-foreground\/80.hover\:transition-none:hover {
+  background-color: #fdf2f8;
+  color: #f472b6;
+}
+
+#nd-docs-layout > button,
+#nd-sidebar
+  > div
+  > div.flex.flex-col.border-t.px-4.py-3.empty\:hidden
+  > div
+  > button {
+  color: #f472b6;
+}
+
+#nd-page > article > p {
+  color: #64748b;
+}
+
+#nd-sidebar > div > div.flex.flex-col.gap-2.px-4.empty\:hidden > button {
+  color: #f472b6;
+  border-color: #fbcfe8;
+}
+
+#nd-sidebar > div > div.flex.flex-col.gap-2.px-4.empty\:hidden > button:hover {
+  border-color: #fbcfe8;
+}
+
+#nd-sidebar
+  > div
+  > div.flex.flex-col.gap-2.px-4.empty\:hidden
+  > button
+  > div
+  > kbd {
+  border-color: #fbcfe8;
+}
+
+#nd-sidebar
+  > div
+  > div.flex.flex-col.gap-2.px-4.empty\:hidden
+  > button:hover
+  > div
+  > kbd {
+  background-color: #fbcfe8;
+  border-color: #fbcfe8;
+}
+
+#nd-subnav
+  > button.inline-flex.items-center.justify-center.rounded-md.text-sm.font-medium.transition-colors.duration-100.disabled\:pointer-events-none.disabled\:opacity-50.hover\:bg-fd-accent.hover\:text-fd-accent-foreground.p-1\.5.\[\&_svg\]\:size-5.-me-2.md\:hidden,
+#nd-subnav > button:nth-child(3),
+#radix-\:Rpdaul7\: > a {
+  color: #f472b6;
+}
+
+#radix-\:Rpdaul7\: {
+  border-color: #fbcfe8;
+}
+
+.text-fd-card {
+  fill: #fbcfe8 !important;
+  color: #f472b6 !important;
+}
+
+div[data-radix-popper-content-wrapper] > div {
+  background-color: #fff;
+  border: 1px solid #fbcfe8;
+}
+
+div[data-radix-popper-content-wrapper] a {
+  fill: #fbcfe8 !important;
+  color: #f472b6 !important;
+}
+
+#nd-page > article > div.grid.grid-cols-2.gap-4.pb-6 > a:hover {
+  border-color: #fbcfe8;
+}
+
+#nd-page > article > div.grid.grid-cols-2.gap-4.pb-6 > a:hover > div > p {
+  color: #f9a8d4;
+}
+#nd-page > article > div.grid.grid-cols-2.gap-4.pb-6 > a:hover > p {
+  color: #f472b6;
+}
+
+#nd-page > article > div.grid.grid-cols-2.gap-4.pb-6 > a:hover > div > svg {
+  color: #f9a8d4;
 }
