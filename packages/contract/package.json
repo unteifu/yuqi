@@ -1,10 +1,22 @@
 {
   "name": "@yuqijs/contract",
-  "version": "0.2.0",
+  "version": "0.2.1",
+  "description": "YuqiJS - Build contracts to define the structure of your API",
   "type": "module",
+  "homepage": "https://yuqijs.com",
+  "keywords": [
+    "contract",
+    "api",
+    "zod",
+    "yuqijs",
+    "rest"
+  ],
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -14,7 +26,7 @@
   "scripts": {
     "build": "tsup src/index.ts --format cjs,esm --dts",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
-    "dev": "tsup src/index.ts --format cjs,esm --dts --watch",
+    "dev": "tsup src/index.ts --format cjs,esm --dts",
     "format": "prettier --check . --ignore-path ../../.gitignore",
     "lint": "eslint",
     "test": "jest",
