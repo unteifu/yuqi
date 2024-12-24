@@ -31,9 +31,10 @@ bun add @yuqijs/contract zod
 <h4>Create a contract</h4>
 
 ```typescript
+import { z } from "zod";
+
 import type { InferRequest, InferResponse } from "@yuqijs/contract";
 import { createContract } from "@yuqijs/contract";
-import { z } from "zod";
 
 // Define a contract
 const userContract = createContract({
