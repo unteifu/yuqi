@@ -1,16 +1,15 @@
 <p align="center">
  <img src="../../assets/yuqi.webp" height="150"></img>
 </p>
-
 <p align="center">Build e2e typesafe REST API's magically 🪄</p>
 
-## @yuqijs/contract
+<h2>@yuqijs/contract</h2>
 
 <h3 align="center">Read the <a href="https://yuqijs.com">documentation</a> to get started 🚀</h3>
 
 `@yuqijs/contract` is a package that helps you define your REST API through a contract to be consumed by your API client and server. It provides a simple and intuitive way to define your API contract using TypeScript and Zod.
 
-## Features
+<h2>Features</h2>
 
 - Simple contract definition using Zod ✍️
 - Nested contracts for better organization 📂
@@ -18,7 +17,7 @@
 - Structured response definitions for each HTTP status codes 🚦
 - Supports all HTTP methods 🚀
 
-## Installation
+<h2>Installation</h2>
 
 ```bash
 npm install @yuqijs/contract zod
@@ -27,9 +26,9 @@ yarn add @yuqijs/contract zod
 bun add @yuqijs/contract zod
 ```
 
-## Usage
+<h2>Usage</h2>
 
-#### Create a contract
+<h4>Create a contract</h4>
 
 ```typescript
 import type { InferRequest, InferResponse } from "@yuqijs/contract";
@@ -97,7 +96,7 @@ const contract = createContract({
 });
 ```
 
-#### Infer contract request and response types
+<h4>Infer contract request and response types</h4>
 
 ```typescript
 import type { InferRequest, InferResponse } from "@yuqijs/contract";
