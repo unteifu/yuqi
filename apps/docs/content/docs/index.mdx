@@ -1,13 +1,20 @@
 ---
-title: Hello World
-description: Your first document
+title: Get Started
+description: Welcome to the YuqiJS docs let's get started with the basics!
 ---
 
-Welcome to the docs! You can start writing documents in `/content/docs`.
+import { Accordion, Accordions } from 'fumadocs-ui/components/accordion';
 
-## What is Next?
+## What is YuqiJS?
 
-<Cards>
-  <Card title="Learn more about Next.js" href="https://nextjs.org/docs" />
-  <Card title="Learn more about Fumadocs" href="https://fumadocs.vercel.app" />
-</Cards>
+YuqiJS is a contract-first library for building API's. It provides a set of tools to help you build APIs with TypeScript and aims to make the process of building APIs more predictable and maintainable.
+
+## FAQ
+<Accordions type="multiple">
+  <Accordion title="What does contract-first mean?">
+  Contract-first is a way of defining a "source of truth" for your API. Your API's structure is outputted from a single source, such as it's own package in a monorepo, which prevents accidental changes to your API's structure inside of handlers for example.
+  </Accordion>
+  <Accordion title="Why is the package called YuqiJS?">
+  Yuqi is a member of the K-pop group (G)I-DLE who I stan! The package is named after her because I didn't want to name it something generic like @restful-contract-rpc. And I used her full Korean name (Song Yuqi) in the package logo because 3 is the magic number in design. 
+  </Accordion>
+</Accordions>

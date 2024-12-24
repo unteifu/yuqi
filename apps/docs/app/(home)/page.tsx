@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <main className="flex flex-1 gap-8 flex-col mt-20 mx-5 items-center text-center">
+    <main className="mx-5 mt-20 flex flex-1 flex-col items-center gap-8 text-center">
       <Image
         src="/yuqi.webp"
         alt="YuqiJS"
@@ -13,19 +13,19 @@ export default function HomePage() {
         unoptimized
       />
       <div className="flex flex-col gap-3">
-        <h1 className="text-2xl sm:text-4xl font-bold text-pink-400">
+        <h1 className="text-2xl font-bold text-pink-400 sm:text-4xl">
           REST API's made magical 🪄
         </h1>
-        <p className="text-sm sm:text-lg text-slate-400 max-w-lg dark:text-slate-300">
+        <p className="max-w-lg text-sm text-slate-400 dark:text-slate-300 sm:text-lg">
           Build Typesafe End-to-End REST API's with ease, reduce mistakes and
           increase productivity.
         </p>
       </div>
-      <div className=" flex gap-3 sm:gap-10 flex-col sm:flex-row">
-        <Link href="/" className="bg-pink-400 px-8 py-3 flex rounded-full">
+      <div className="flex flex-col gap-3 sm:flex-row sm:gap-10">
+        <Link href="/docs" className="flex rounded-full bg-pink-400 px-8 py-3">
           <span className="font-medium text-white">Get Started</span>
         </Link>
-        <Link href="/" className="bg-pink-200/50 px-8 py-3 flex rounded-full">
+        <Link href="/" className="flex rounded-full bg-pink-200/50 px-8 py-3">
           <span className="font-medium text-pink-500">Playground</span>
         </Link>
       </div>
