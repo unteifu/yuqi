@@ -1,27 +1,25 @@
-import type { z } from "zod";
-
 import type { ContractCollection, ContractObject } from "@yuqijs/contract";
 
-type InferResponse<T> = T extends z.ZodTypeAny ? z.infer<T> : never;
+type InferSchemaType<T> = T extends { _output: unknown } ? T["_output"] : T;
 
 export type ResponseType<T extends ContractObject> = {
   [K in keyof T["responses"]]: {
     status: K;
-    data: InferResponse<T["responses"][K]>;
+    data: InferSchemaType<T["responses"][K]>;
   };
 }[keyof T["responses"]];
 
 export type RequestParams<T extends ContractObject> = T["request"] extends {
-  params: z.ZodType;
+  params: { _output: unknown };
 }
-  ? { params: z.infer<T["request"]["params"]> }
-  : T["request"] extends { body: z.ZodType }
-    ? { body: z.infer<T["request"]["body"]> }
+  ? { params: InferSchemaType<T["request"]["params"]> }
+  : T["request"] extends { body: { _output: unknown } }
+    ? { body: InferSchemaType<T["request"]["body"]> }
     : Record<string, never>;
 
 export type HasRequiredParams<T extends ContractObject> = T["request"] extends
-  | { params: z.ZodType }
-  | { body: z.ZodType }
+  | { params: { _output: unknown } }
+  | { body: { _output: unknown } }
   ? true
   : false;
 

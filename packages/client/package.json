@@ -52,8 +52,5 @@
   "prettier": "@yuqijs/prettier-config",
   "publishConfig": {
     "access": "public"
-  },
-  "peerDependencies": {
-    "zod": "^3.24.1"
   }
 }

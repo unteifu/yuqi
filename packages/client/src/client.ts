@@ -47,6 +47,13 @@ export function createClient<T extends ContractCollection>(
         },
       };
 
+      if (config?.body && endpoint.request?.body) {
+        const validatedBody = endpoint.request.body.parse(
+          config.body,
+        ) as Record<string, unknown>;
+        fetchOptions.body = JSON.stringify(validatedBody);
+      }
+
       const response = await fetch(url.toString(), fetchOptions);
       const data = await response.json();
 

@@ -163,4 +163,150 @@ describe("createClient", () => {
       }),
     ).rejects.toThrow();
   });
+
+  it("correctly handles POST requests with a body", async () => {
+    const mockResponse = { id: "123", title: "New Post" };
+    mockFetch.mockResolvedValueOnce({
+      status: 200,
+      json: () => Promise.resolve(mockResponse),
+    });
+
+    const contract = createContract({
+      posts: {
+        create: {
+          path: "/posts",
+          method: "POST",
+          request: {
+            body: z.object({
+              title: z.string(),
+              content: z.string(),
+              published: z.boolean().optional(),
+            }),
+          },
+          responses: {
+            200: z.object({
+              id: z.string(),
+              title: z.string(),
+            }),
+          },
+        },
+      },
+    });
+
+    const client = createClient(contract, "http://api.example.com");
+    await client.posts.create({
+      body: {
+        title: "New Post",
+        content: "Post content",
+        published: true,
+      },
+    });
+
+    expect(mockFetch).toHaveBeenCalledWith(
+      "http://api.example.com/posts",
+      expect.objectContaining<RequestInit>({
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          title: "New Post",
+          content: "Post content",
+          published: true,
+        }),
+      }),
+    );
+  });
+
+  it("handles merged contracts correctly", async () => {
+    const mockResponse = { id: "123", name: "John" };
+    mockFetch.mockResolvedValueOnce({
+      status: 200,
+      json: () => Promise.resolve(mockResponse),
+    });
+
+    const userContract = createContract({
+      getUser: {
+        path: "/users/:id",
+        method: "GET",
+        request: {
+          params: z.object({
+            id: z.string(),
+          }),
+        },
+        responses: {
+          200: z.object({
+            id: z.string(),
+            name: z.string(),
+          }),
+        },
+      },
+      createUser: {
+        path: "/users",
+        method: "POST",
+        request: {
+          body: z.object({
+            name: z.string(),
+            email: z.string(),
+          }),
+        },
+        responses: {
+          200: z.object({
+            id: z.string(),
+            name: z.string(),
+          }),
+        },
+      },
+    });
+
+    const apiContract = createContract({
+      users: userContract,
+      health: {
+        check: {
+          path: "/health",
+          method: "GET",
+          responses: {
+            200: z.object({
+              status: z.string(),
+            }),
+          },
+        },
+      },
+    });
+
+    const client = createClient(apiContract, "http://api.example.com");
+
+    await client.users.getUser({ params: { id: "123" } });
+
+    expect(mockFetch).toHaveBeenCalledWith(
+      "http://api.example.com/users/123",
+      expect.objectContaining<RequestInit>({
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }),
+    );
+
+    mockFetch.mockClear();
+    mockFetch.mockResolvedValueOnce({
+      status: 200,
+      json: () => Promise.resolve({ id: "123", name: "John" }),
+    });
+
+    await client.users.createUser({
+      body: { name: "John", email: "john@example.com" },
+    });
+
+    expect(mockFetch).toHaveBeenCalledWith(
+      "http://api.example.com/users",
+      expect.objectContaining<RequestInit>({
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ name: "John", email: "john@example.com" }),
+      }),
+    );
+  });
 });
