@@ -1,9 +1,10 @@
+import { describe, expect, it } from "vitest";
 import { z } from "zod";
 
 import type {
   InferRequestSchema,
   InferResponseSchema,
-} from "../src/utils/infer";
+} from "../src/types/infer";
 import { createContract } from "../src/contracts";
 
 describe("Contract Creation", () => {

@@ -1,6 +1,6 @@
 import type { z } from "zod";
 
-import type { ContractObject } from "../contracts";
+import type { ContractObject } from "./contract";
 
 export type InferRequestSchema<T extends ContractObject> = {
   [K in keyof Required<T>["request"] as T["request"] extends Record<K, unknown>

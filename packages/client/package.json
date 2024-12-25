@@ -1,11 +1,12 @@
 {
-  "name": "@yuqijs/contract",
-  "version": "0.2.1",
-  "description": "YuqiJS - Build contracts to define the structure of your API",
+  "name": "@yuqijs/client",
+  "version": "0.0.0",
+  "description": "YuqiJS - Handle your REST API calls with ease",
   "type": "module",
   "homepage": "https://yuqijs.com",
   "keywords": [
-    "contract",
+    "client",
+    "fetch",
     "api",
     "zod",
     "yuqijs",
@@ -26,10 +27,10 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/unteifu/yuqi.git",
-    "directory": "packages/contract"
+    "directory": "packages/client"
   },
   "scripts": {
-    "build": "tsup src/index.ts --format esm --clean --dts",
+    "build": "tsup src/index.ts --format esm --dts",
     "clean": "git clean -xdf .cache .turbo dist node_modules",
     "dev": "tsup src/index.ts --format esm --dts",
     "format": "prettier --check . --ignore-path ../../.gitignore",
@@ -38,6 +39,7 @@
     "typecheck": "tsc --noEmit --emitDeclarationOnly false"
   },
   "devDependencies": {
+    "@yuqijs/contract": "workspace:*",
     "@yuqijs/eslint-config": "workspace:*",
     "@yuqijs/prettier-config": "workspace:*",
     "@yuqijs/tsconfig": "workspace:*",
