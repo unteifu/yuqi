@@ -9,13 +9,15 @@ export type ResponseType<T extends ContractObject> = {
   };
 }[keyof T["responses"]];
 
-export type RequestParams<T extends ContractObject> = T["request"] extends {
-  params: { _output: unknown };
-}
-  ? { params: InferSchemaType<T["request"]["params"]> }
-  : T["request"] extends { body: { _output: unknown } }
-    ? { body: InferSchemaType<T["request"]["body"]> }
-    : Record<string, never>;
+export type RequestParams<T extends ContractObject> = {
+  [K in keyof T["request"]]: T["request"][K] extends { _output: unknown }
+    ? Record<K, InferSchemaType<T["request"][K]>>
+    : never;
+}[keyof T["request"]] extends infer R
+  ? [R] extends [never]
+    ? Record<string, never>
+    : R
+  : Record<string, never>;
 
 export type HasRequiredParams<T extends ContractObject> = T["request"] extends
   | { params: { _output: unknown } }

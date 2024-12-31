@@ -153,6 +153,9 @@ importers:
       '@types/react-dom':
         specifier: ^19.0.2
         version: 19.0.2(@types/react@19.0.2)
+      '@yuqijs/client':
+        specifier: workspace:^
+        version: link:../../packages/client
       '@yuqijs/eslint-config':
         specifier: workspace:*
         version: link:../../tooling/eslint
@@ -185,10 +188,6 @@ importers:
         version: 5.7.2
 
   packages/client:
-    dependencies:
-      zod:
-        specifier: ^3.24.1
-        version: 3.24.1
     devDependencies:
       '@yuqijs/contract':
         specifier: workspace:*

@@ -1,6 +1,6 @@
 {
   "name": "@yuqijs/contract",
-  "version": "0.2.1",
+  "version": "0.0.0",
   "description": "YuqiJS - Build contracts to define the structure of your API",
   "type": "module",
   "homepage": "https://yuqijs.com",

@@ -38,6 +38,18 @@ export function createClient<T extends ContractCollection>(
         url.pathname = endpoint.path;
       }
 
+      if (config?.query && endpoint.request?.query) {
+        const validatedQuery = endpoint.request.query.parse(
+          config.query,
+        ) as Record<string, string | number | boolean | null | undefined>;
+
+        Object.entries(validatedQuery).forEach(([key, value]) => {
+          if (value !== null && value !== undefined) {
+            url.searchParams.append(key, String(value));
+          }
+        });
+      }
+
       const fetchOptions: RequestInit = {
         ...defaultOptions,
         method: endpoint.method,

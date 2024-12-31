@@ -1,0 +1,125 @@
+---
+title: Client
+---
+
+import { Tab, Tabs } from 'fumadocs-ui/components/tabs';
+import { File, Folder, Files } from 'fumadocs-ui/components/files';
+
+The Fetch Client is a lightweight client for making HTTP requests to your API. It is designed to work with the contracts you define using the `@yuqijs/contract` package to provide a type-safe way to interact with your API.
+
+## Installation
+
+<Tabs groupId='package-manager' persist items={['npm', 'pnpm', 'yarn', 'bun']}>
+
+```bash tab="npm"
+npm install @yuqijs/client
+```
+
+```bash tab="pnpm"
+pnpm add @yuqijs/client
+```
+
+```bash tab="yarn"
+yarn add @yuqijs/client
+```
+
+```bash tab="bun"
+bun add @yuqijs/client
+```
+
+</Tabs>
+
+## Basic Usage
+
+To create a client, we simply can use the `createClient` function and  pass in the contract and the base URL of the API.
+
+<Callout>
+As this is a layer on top of the Fetch API, you can use the same options as you would with the Fetch API. For example, you can pass in a `credentials` option to include cookies in your requests.
+</Callout>
+
+```ts twoslash title="api.ts"
+// @filename: node_modules/@types/@yourpackage/index.d.ts
+import { z } from "zod";
+import { createContract } from "@yuqijs/contract";
+
+const userContract = createContract({
+  getUser: {
+    path: "/users/:id",
+    method: "GET",
+    request: {
+      params: z.object({
+        id: z.string(),
+      }),
+    },
+    responses: {
+      200: z.object({
+        id: z.string(),
+        name: z.string(),
+        email: z.string(),
+      }),
+      404: z.object({
+        error: z.string(),
+      }),
+    },
+  },
+  updateUser: {
+    path: "/users/:id",
+    method: "PUT",
+    request: {
+      params: z.object({
+        id: z.string(),
+      }),
+      body: z.object({
+        name: z.string().optional(),
+        email: z.string().optional(),
+      }),
+    },
+    responses: {
+      200: z.object({
+        success: z.boolean(),
+      }),
+      404: z.object({
+        error: z.string(),
+      }),
+    },
+  },
+});
+
+const contract = createContract({
+  users: userContract,
+});
+
+export default contract;
+// @filename: utils/api.ts
+// ---cut---
+import contract from '@yourpackage';
+import { createClient } from "@yuqijs/client";
+
+const api = createClient(contract, "https://api.example.com", {
+  credentials: "include"
+});
+
+export default api;
+```
+
+```ts twoslash title="users.ts"
+// @filename: utils/api.ts
+// ---cut---
+import contract from '@yourpackage';
+import { createClient } from "@yuqijs/client";
+
+const api = createClient(contract, "https://api.example.com", {
+  credentials: "include"
+});
+
+export default api;
+// @filename: userInfo.tsx
+// ---cut---
+import api from './utils/api';
+
+await api.getUser({
+  params: {
+    id: "123",
+  },
+});
+```
