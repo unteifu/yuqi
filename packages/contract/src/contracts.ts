@@ -1,13 +1,11 @@
-import type { RouterDefinition, TypedRouter } from "./types/contract";
+import type { RouterInput, TypedRouter } from "./types/contract";
 
-export function createRouter<T extends RouterDefinition>(
-  routes: T,
-): TypedRouter<T> {
+function createRouter<T extends RouterInput>(routes: T): TypedRouter<T> {
   return routes as TypedRouter<T>;
 }
 
 export class ContractBuilder {
-  router<T extends RouterDefinition>(routes: T): TypedRouter<T> {
+  router<T extends RouterInput>(routes: T): TypedRouter<T> {
     return createRouter(routes);
   }
 }
