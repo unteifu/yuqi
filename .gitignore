@@ -48,3 +48,6 @@ dist/
 .contentlayer
 .content-collections
 .source
+
+# vitepress
+apps/docs/.vitepress/cache
