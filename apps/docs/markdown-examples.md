@@ -8,6 +8,10 @@ VitePress provides Syntax Highlighting powered by [Shiki](https://github.com/shi
 
 **Input**
 
+```ts twoslash
+console.log("hello");
+```
+
 ````md
 ```js{4}
 export default {

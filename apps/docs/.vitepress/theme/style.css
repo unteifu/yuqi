@@ -72,6 +72,8 @@
   --vp-c-danger-2: var(--vp-c-red-2);
   --vp-c-danger-3: var(--vp-c-red-3);
   --vp-c-danger-soft: #fecaca;
+
+  --vp-c-border: #cbd5e1;
 }
 
 /**
@@ -164,7 +166,21 @@
  * Component: Code
  * -------------------------------------------------------------------------- */
 :root {
-  --vp-code-block-bg: #f8fafc;
+  --shiki-foreground: #64748b; /* Darkened version of #f472b6 for text contrast */
+  --shiki-background: #f8fafc; /* Light, soft background */
+  --shiki-token-constant: #c02770; /* Rich pink for constants */
+  --shiki-token-string: #e11d74; /* Vibrant pinkish-red for strings */
+  --shiki-token-comment: #94a3b8; /* Muted mauve for comments */
+  --shiki-token-keyword: #db2777; /* Slightly darker, emphasised pink for keywords */
+  --shiki-token-parameter: #bf5f8c; /* A medium, balanced pink */
+  --shiki-token-function: #f472b6; /* Base colour for functions */
+  --shiki-token-string-expression: #ec4899; /* Bright and bold pink for string expressions */
+  --shiki-token-punctuation: #7e2d56; /* Muted dark pink for punctuation */
+  --shiki-token-link: #fbcfe8; /* Soft pastel pink for links */
+
+  .vp-doc :not(pre) > code {
+    background-color: #fbcfe8;
+  }
 }
 /**
 
