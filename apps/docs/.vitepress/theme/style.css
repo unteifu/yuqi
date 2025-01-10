@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /**
  * Customize default theme styling by overriding CSS variables:
  * https://github.com/vuejs/vitepress/blob/main/src/client/theme-default/styles/vars.css
@@ -47,28 +51,65 @@
   --vp-c-default-1: var(--vp-c-gray-1);
   --vp-c-default-2: var(--vp-c-gray-2);
   --vp-c-default-3: var(--vp-c-gray-3);
-  --vp-c-default-soft: var(--vp-c-gray-soft);
+  --vp-c-default-soft: #e2e8f0;
 
-  --vp-c-brand-1: var(--vp-c-indigo-1);
-  --vp-c-brand-2: var(--vp-c-indigo-2);
-  --vp-c-brand-3: var(--vp-c-indigo-3);
-  --vp-c-brand-soft: var(--vp-c-indigo-soft);
+  --vp-c-brand-1: #f472b6;
+  --vp-c-brand-2: #ec4899;
+  --vp-c-brand-3: #fbcfe8;
+  --vp-c-brand-soft: #fbcfe8;
 
   --vp-c-tip-1: var(--vp-c-brand-1);
   --vp-c-tip-2: var(--vp-c-brand-2);
   --vp-c-tip-3: var(--vp-c-brand-3);
-  --vp-c-tip-soft: var(--vp-c-brand-soft);
+  --vp-c-tip-soft: #fbcfe8;
 
-  --vp-c-warning-1: var(--vp-c-yellow-1);
-  --vp-c-warning-2: var(--vp-c-yellow-2);
-  --vp-c-warning-3: var(--vp-c-yellow-3);
-  --vp-c-warning-soft: var(--vp-c-yellow-soft);
+  --vp-c-warning-1: #facc15;
+  --vp-c-warning-2: #fcd34d;
+  --vp-c-warning-3: #fde68a;
+  --vp-c-warning-soft: #fef08a;
 
   --vp-c-danger-1: var(--vp-c-red-1);
   --vp-c-danger-2: var(--vp-c-red-2);
   --vp-c-danger-3: var(--vp-c-red-3);
-  --vp-c-danger-soft: var(--vp-c-red-soft);
+  --vp-c-danger-soft: #fecaca;
 }
+
+/**
+ * Typography
+ * -------------------------------------------------------------------------- */
+:root {
+  .vp-doc h1 {
+    color: var(--vp-c-brand-1);
+  }
+
+  .vp-doc h2 {
+    color: #64748b;
+  }
+
+  .vp-doc h3 {
+    color: #64748b;
+  }
+
+  .vp-doc strong {
+    color: #64748b;
+  }
+
+  .vp-doc p {
+    color: #94a3b8;
+  }
+}
+
+/**
+ * Sidebar
+ * -------------------------------------------------------------------------- */
+:root {
+  --vp-sidebar-bg-color: white;
+
+  #app > div > header > div > div.wrapper > div > div.title > div > a {
+    border-bottom-color: transparent;
+  }
+}
+/**
 
 /**
  * Component: Button
@@ -85,6 +126,47 @@
   --vp-button-brand-active-text: var(--vp-c-white);
   --vp-button-brand-active-bg: var(--vp-c-brand-1);
 }
+
+/**
+ * Component: Navbar
+ * -------------------------------------------------------------------------- */
+.title {
+  display: flex;
+}
+
+.VPImage.logo {
+  width: 68px;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .VPNavBarSearch {
+    width: 100%;
+    padding: 0px 32px;
+  }
+
+  #local-search {
+    width: 100%;
+  }
+
+  #local-search > button {
+    width: 100%;
+    display: flex;
+    background-color: #f8fafc;
+  }
+
+  .DocSearch-Button {
+    justify-content: space-between;
+  }
+}
+
+/**
+ * Component: Code
+ * -------------------------------------------------------------------------- */
+:root {
+  --vp-code-block-bg: #f8fafc;
+}
+/**
 
 /**
  * Component: Home
@@ -127,6 +209,39 @@
   --vp-custom-block-tip-text: var(--vp-c-text-1);
   --vp-custom-block-tip-bg: var(--vp-c-brand-soft);
   --vp-custom-block-tip-code-bg: var(--vp-c-brand-soft);
+
+  .custom-block.info p {
+    color: #475569;
+  }
+
+  .custom-block.details p {
+    color: #475569;
+  }
+
+  .custom-block.tip p {
+    color: #db2777;
+  }
+
+  .custom-block.warning p {
+    color: #ca8a04;
+  }
+
+  .custom-block.danger p {
+    color: #dc2626;
+  }
+}
+
+/**
+ * Component: Socials
+ * -------------------------------------------------------------------------- */
+:root {
+  .VPSocialLink {
+    color: #64748b;
+  }
+
+  .VPSocialLink:hover {
+    color: var(--vp-c-brand-1);
+  }
 }
 
 /**
@@ -136,4 +251,3 @@
 .DocSearch {
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
-

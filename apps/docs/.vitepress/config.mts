@@ -6,11 +6,13 @@ export default defineConfig({
   description: "A VitePress Site",
   appearance: false,
   themeConfig: {
+    logo: "/yuqi.webp",
+    siteTitle: false,
+    search: {
+      provider: "local",
+    },
     // https://vitepress.dev/reference/default-theme-config
-    nav: [
-      { text: "Home", link: "/" },
-      { text: "Examples", link: "/markdown-examples" },
-    ],
+    nav: [{ text: "Playground", link: "/playground" }],
 
     sidebar: [
       {
@@ -23,7 +25,7 @@ export default defineConfig({
     ],
 
     socialLinks: [
-      { icon: "github", link: "https://github.com/vuejs/vitepress" },
+      { icon: "github", link: "https://github.com/unteifu/yuqi" },
       { icon: "discord", link: "https://discord.com/invite/4tsmYvgWKQ" },
     ],
   },
