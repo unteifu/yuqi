@@ -267,3 +267,9 @@
 .DocSearch {
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
+
+.NotFound {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
