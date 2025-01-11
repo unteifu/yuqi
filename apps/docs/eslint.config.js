@@ -1,14 +1,12 @@
 import baseConfig, { restrictEnvAccess } from "@yuqijs/eslint-config/base";
-import nextjsConfig from "@yuqijs/eslint-config/nextjs";
-import reactConfig from "@yuqijs/eslint-config/react";
+import vueConfig from "@yuqijs/eslint-config/vue";
 
 /** @type {import('typescript-eslint').Config} */
 export default [
   {
-    ignores: [".next/**"],
+    ignores: [".vitepress/cache/**", ".vitepress/dist/**"],
   },
   ...baseConfig,
-  ...reactConfig,
-  ...nextjsConfig,
+  ...vueConfig,
   ...restrictEnvAccess,
 ];
