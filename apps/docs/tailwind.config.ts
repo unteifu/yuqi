@@ -5,11 +5,7 @@ import baseConfig from "@yuqijs/tailwind-config/web";
 
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    ...baseConfig.content,
-    "./components/**/*.vue",
-    "./.vitepress/**/*.css",
-  ],
+  content: [...baseConfig.content, "components/**/*.vue"],
   presets: [baseConfig],
   important: true,
   theme: {
