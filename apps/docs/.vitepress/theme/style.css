@@ -1,3 +1,4 @@
+@import "@fortawesome/fontawesome-free/css/all.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -51,7 +52,7 @@
   --vp-c-default-1: var(--vp-c-gray-1);
   --vp-c-default-2: var(--vp-c-gray-2);
   --vp-c-default-3: var(--vp-c-gray-3);
-  --vp-c-default-soft: #e2e8f0;
+  --vp-c-default-soft: #f1f5f9;
 
   --vp-c-brand-1: #f472b6;
   --vp-c-brand-2: #ec4899;
@@ -82,22 +83,45 @@
 :root {
   .vp-doc h1 {
     color: var(--vp-c-brand-1);
+    font-weight: 800;
   }
 
   .vp-doc h2 {
     color: #64748b;
+    font-weight: 800;
   }
 
   .vp-doc h3 {
     color: #64748b;
+    font-weight: 600;
   }
 
   .vp-doc strong {
     color: #64748b;
+    font-weight: 700;
   }
 
   .vp-doc p {
     color: #94a3b8;
+    font-weight: 600;
+  }
+
+  .vp-doc p a {
+    font-weight: 600;
+  }
+
+  .VPLastUpdated {
+    color: #94a3b8;
+    font-weight: 600;
+  }
+
+  .pager-link > span.desc {
+    font-weight: 700 !important;
+    color: #94a3b8;
+  }
+
+  .pager-link > span.title {
+    font-weight: 800 !important;
   }
 }
 
@@ -141,6 +165,21 @@
   height: auto;
 }
 
+.VPNavBarMenuLink {
+  color: #64748b !important;
+  font-weight: 700 !important;
+}
+
+.DocSearch-Search-Icon,
+.DocSearch-Button-Placeholder {
+  color: #64748b !important;
+  font-weight: 700 !important;
+}
+
+.VPNavBarMenuLink:hover {
+  color: #f472b6 !important;
+}
+
 @media (min-width: 768px) {
   .VPNavBarSearch {
     width: 100%;
@@ -163,20 +202,94 @@
 }
 
 /**
+ * Component: Sidebar
+ * -------------------------------------------------------------------------- */
+:root {
+  #VPSidebarNav > .group {
+    border: unset;
+  }
+
+  #VPSidebarNav > div > section {
+    padding: 0px 0px 0px 0px;
+  }
+
+  #VPSidebarNav > div > section > div.item > h2 {
+    color: #64748b;
+    font-size: 16px;
+    font-weight: 800;
+  }
+
+  #VPSidebarNav > div > section > div.items > div.VPSidebarItem > div > a > p {
+    color: #94a3b8;
+    font-size: 14px;
+    font-weight: 700;
+  }
+
+  #VPSidebarNav > div > section > div.item > div.caret > span {
+    color: #94a3b8;
+  }
+
+  #VPSidebarNav > div > section > div.item > div.caret > span:hover {
+    color: #f472b6;
+  }
+
+  #VPSidebarNav
+    > div
+    > section
+    > div.items
+    > div.VPSidebarItem
+    > div
+    > a
+    > p:hover {
+    color: #f472b6;
+  }
+
+  #VPSidebarNav
+    > div
+    > section
+    > div.items
+    > div.VPSidebarItem.is-link.is-active.has-active
+    > div
+    > a
+    > p {
+    color: #f472b6;
+  }
+
+  .outline-title {
+    color: #64748b;
+    font-size: 16px;
+    font-weight: 800;
+  }
+
+  .outline-link {
+    color: #94a3b8;
+    font-weight: 700;
+    font-size: 14px;
+  }
+
+  .outline-link:hover {
+    color: #f472b6;
+  }
+
+  .outline-link.active {
+    color: #f472b6;
+  }
+}
+/**
  * Component: Code
  * -------------------------------------------------------------------------- */
 :root {
-  --shiki-foreground: #64748b; /* Darkened version of #f472b6 for text contrast */
-  --shiki-background: #f8fafc; /* Light, soft background */
-  --shiki-token-constant: #c02770; /* Rich pink for constants */
-  --shiki-token-string: #e11d74; /* Vibrant pinkish-red for strings */
-  --shiki-token-comment: #94a3b8; /* Muted mauve for comments */
-  --shiki-token-keyword: #db2777; /* Slightly darker, emphasised pink for keywords */
-  --shiki-token-parameter: #bf5f8c; /* A medium, balanced pink */
-  --shiki-token-function: #f472b6; /* Base colour for functions */
-  --shiki-token-string-expression: #ec4899; /* Bright and bold pink for string expressions */
-  --shiki-token-punctuation: #7e2d56; /* Muted dark pink for punctuation */
-  --shiki-token-link: #fbcfe8; /* Soft pastel pink for links */
+  --shiki-foreground: #64748b;
+  --shiki-background: #f8fafc;
+  --shiki-token-constant: #c02770;
+  --shiki-token-string: #e11d74;
+  --shiki-token-comment: #94a3b8;
+  --shiki-token-keyword: #db2777;
+  --shiki-token-parameter: #bf5f8c;
+  --shiki-token-function: #f472b6;
+  --shiki-token-string-expression: #ec4899;
+  --shiki-token-punctuation: #7e2d56;
+  --shiki-token-link: #fbcfe8;
 
   .vp-doc :not(pre) > code {
     background-color: #fbcfe8;
@@ -230,8 +343,12 @@
     color: #475569;
   }
 
+  .custom-block.details {
+    color: #64748b;
+  }
+
   .custom-block.details p {
-    color: #475569;
+    color: #64748b;
   }
 
   .custom-block.tip p {
@@ -268,8 +385,16 @@
   --docsearch-primary-color: var(--vp-c-brand-1) !important;
 }
 
+/**
+ * Component: NotFound
+ * -------------------------------------------------------------------------- */
 .NotFound {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+:root {
+  --vp-font-family-base: "Nunito", serif;
+  --vp-font-family-mono: "Nunito", serif;
 }

@@ -7,7 +7,7 @@ import DefaultTheme from "vitepress/theme";
     <div
       class="fixed left-0 top-0 z-50 flex h-12 w-full items-center justify-center bg-pink-50"
     >
-      <span class="text-center text-sm font-semibold text-pink-400"
+      <span class="text-center text-sm font-bold text-pink-400"
         >YuqiJS is in early development! Please use with caution. 🚧
       </span>
     </div>
