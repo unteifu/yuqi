@@ -1,6 +1,7 @@
 import { createServer } from "node:http";
 import type { Server } from "node:http";
 
+import type { Router } from "../router";
 import type {
   Port,
   ServerAdapter,
@@ -21,9 +22,19 @@ function formatAddress(address: ServerAddress, port: Port): ServerDetails {
 
 export class NodeHTTPAdapter implements ServerAdapter {
   private server: Server;
+  private router: Router;
 
-  constructor() {
-    this.server = createServer();
+  constructor(router: Router) {
+    this.router = router;
+    this.server = createServer((req, res) => {
+      void this.router.handleRequest(req, res).catch((error) => {
+        console.error("Unhandled error in request handler:", error);
+        if (!res.writableEnded) {
+          res.statusCode = 500;
+          res.end("Internal Server Error");
+        }
+      });
+    });
   }
 
   listen(port: Port): Promise<ServerDetails> {
