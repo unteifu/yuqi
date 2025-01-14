@@ -1,0 +1,19 @@
+{
+  "name": "basic-server",
+  "version": "1.0.0",
+  "description": "A basic server",
+  "main": "server.js",
+  "scripts": {
+    "dev": "tsx --watch src/index.ts",
+    "start": "tsx src/main.ts",
+    "type:check": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@yuqijs/server": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^22.9.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.6.3"
+  }
+}

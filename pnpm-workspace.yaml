@@ -2,6 +2,7 @@ packages:
   - apps/*
   - packages/*
   - tooling/*
+  - examples/*
 
 catalog:
   eslint: ^9.12.0
