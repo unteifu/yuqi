@@ -1,0 +1,55 @@
+{
+  "name": "@yuqijs/server",
+  "version": "0.0.0",
+  "description": "YuqiJS - Build Typesafe End to End API's",
+  "license": "MIT",
+  "homepage": "https://yuqijs.com",
+  "keywords": [
+    "api",
+    "zod",
+    "yuqijs",
+    "rest"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/unteifu/yuqi.git",
+    "directory": "packages/server"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsup",
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "format": "prettier --check . --ignore-path ../../.gitignore",
+    "lint": "eslint"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "publishConfig": {
+    "exports": {
+      ".": {
+        "types": "./dist/src/index.d.ts",
+        "import": "./dist/index.js",
+        "default": "./dist/index.js"
+      }
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@yuqijs/eslint-config": "workspace:*",
+    "@yuqijs/prettier-config": "workspace:*",
+    "@yuqijs/tsconfig": "workspace:*",
+    "eslint": "catalog:",
+    "prettier": "catalog:",
+    "tsup": "^8.3.5",
+    "tsx": "^4.19.2",
+    "typescript": "catalog:",
+    "vitest": "^2.1.8"
+  },
+  "prettier": "@yuqijs/prettier-config",
+  "dependencies": {
+    "zod": "^3.24.1"
+  }
+}
